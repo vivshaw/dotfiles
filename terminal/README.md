@@ -19,11 +19,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-Then:
+then:
 
-- Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
-- Restart Zsh with `exec zsh`.
-- Choose:
+- set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
+- restart Zsh with `exec zsh`.
+- choose:
   - rainbow prompt
   - Unicode
   - 24 hour format
