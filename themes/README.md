@@ -12,5 +12,6 @@ i like Dracula. it's easy on the eyes, good for programming, and available on ju
   - **GTK** - https://draculatheme.com/gtk
 - if Windows:
   - **Windows Terminal** - https://draculatheme.com/windows-terminal
+  - Windows can't be configured with a Dracula theme, but standard dark theme with a `#BD93F9` highlight is Good Enough™️
 - if Mac:
   - **iTerm** - https://draculatheme.com/iterm
