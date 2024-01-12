@@ -27,12 +27,25 @@ then:
   - rainbow prompt
   - Unicode
   - 24 hour format
-  - flat prompt head & tails
+  - angled separators
+  - sharp head
+  - flat tail
   - two line
   - disconnected
   - full frame
   - darkest frame
   - sparse
+  - many icons
   - fluent
   - transient prompt
   - instant prompt
+
+## SSH and keychain
+
+- generate a new SSH key
+- `sudo apt install keychain`
+- add to the top of `~/.zshrc`: `eval `keychain --agents ssh --eval ~/.ssh/yourSSHKey``
+
+## Windows Terminal
+
+ensure that the terminal opens maximized!
