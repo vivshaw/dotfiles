@@ -3,7 +3,7 @@ if (not status) then return end
 
 bufferline.setup({
   options = {
-    mode = "tabs",
+    mode = "buffers",
     separator_style = 'thick',
     always_show_bufferline = true,
     show_buffer_close_icons = false,
