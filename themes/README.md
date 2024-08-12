@@ -1,6 +1,6 @@
 # Setup
 
-i like Dracula. it's easy on the eyes, good for programming, and available on just about everything. consistency, ease, and familiarity let me focus on what matters.
+I like Dracula. it's easy on the eyes, good for programming, and available on just about everything. consistency, ease, and familiarity let me focus on what matters.
 
 ## Specific apps to theme:
 
