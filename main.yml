@@ -2,6 +2,11 @@
 - name: dotfiles & system bootstrap
   hosts: localhost
   tasks:
+    - name: zsh
+      tags: zsh
+      import_role:
+        name: zsh
+
     - name: CLI utilities
       tags: utils
       import_role:
