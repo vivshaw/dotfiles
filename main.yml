@@ -1,0 +1,8 @@
+---
+- name: dotfiles & system bootstrap
+  hosts: localhost
+  tasks:
+    - name: CLI utilities
+      tags: utils
+      import_role:
+        name: utils

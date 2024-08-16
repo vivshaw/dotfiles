@@ -118,3 +118,7 @@ eval "$(atuin init zsh)"
 
 # Local customizations:
 [[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
+
+alias bat=batcat
+alias fd=fdfind
+alias ls=exa

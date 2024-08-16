@@ -51,17 +51,14 @@ then:
 - `atuin` - [fancy shell history](https://atuin.sh/)
 - `bat` - [`cat` clone with syntax highlights](https://github.com/sharkdp/bat)
 - `exa` - [nicer `ls`](https://the.exa.website/)
+- `fd` - a [nicer `find`](https://github.com/sharkdp/fd)
 - `fzf` - [a fast and pleasant fuzzy-finder](https://github.com/junegunn/fzf)
+- `jq` - the Swiss Army Knife of CLI data manipulation
 - `ripgrep` - [fancy `grep` that respects `.gitignore`](https://github.com/BurntSushi/ripgrep)
-
-```sh
-❯ /bin/bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)"
-❯ sudo apt install bat exa fzf ripgrep
-```
 
 ## Terminal Maximization
 
 ensure that the terminal opens maximized!
 
- - in Windows, this can be done right in the terminal settings GUI.
- - in Gnome, this can be done by [configuring the desktop shortcut](https://askubuntu.com/a/408202) to pass the `--maximize` flag.
+- in Windows, this can be done right in the terminal settings GUI.
+- in Gnome, this can be done by [configuring the desktop shortcut](https://askubuntu.com/a/408202) to pass the `--maximize` flag.
