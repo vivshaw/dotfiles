@@ -16,3 +16,8 @@
       tags: gnome
       import_role:
         name: gnome
+
+    - name: stow dotfiles
+      tags: stow
+      import_role:
+        name: stow
