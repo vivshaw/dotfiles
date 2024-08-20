@@ -6,10 +6,10 @@
       - bat
       - curl
       - eza
-      - fzf
-      - ripgrep
       - fd-find
+      - fzf
       - jq
+      - ripgrep
     state: present
 
 - name: install Atuin

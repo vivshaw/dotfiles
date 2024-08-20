@@ -21,3 +21,8 @@
       tags: stow
       import_role:
         name: stow
+
+    - name: neovim
+      tags: nvim
+      import_role:
+        name: nvim
