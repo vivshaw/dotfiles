@@ -11,3 +11,8 @@
       tags: utils
       import_role:
         name: utils
+
+    - name: Gnome GUI tweaks
+      tags: gnome
+      import_role:
+        name: gnome

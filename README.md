@@ -16,3 +16,4 @@ pipx install ansible
 - automate Gnome setup, as much as possible
 - figure out how to automate Gnome Terminal shortcut edit
 - figure out how to make `fdfind` and `batcat` aliases conditional on being Debian-based
+- figure out how to fix transparency weirdness on login screen
