@@ -17,3 +17,7 @@ pipx install ansible
 - figure out how to automate Gnome Terminal shortcut edit
 - figure out how to make `fdfind` and `batcat` aliases conditional on being Debian-based
 - figure out how to fix transparency weirdness on login screen
+- figure out macOS AltTab, can that be automated?
+- unbreak Brew installs
+- figure out what to do with local zsh customizations, without breaking the whole flow
+- is Gnome config conditional? make it so if not
