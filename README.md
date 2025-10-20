@@ -28,6 +28,7 @@ ansible-playbook main.yml --ask-become-pass
 - install [the fonts](./assets/fonts/), set them in the terminal app
 - install [the themes](./themes/)
 - set [the background](./assets/images/)
+- MacOS: install [AltTab](https://alt-tab-macos.netlify.app/)
 
 ## TODO
 

@@ -8,6 +8,11 @@ my neovim config. a significant WIP.
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
+## Quickstart
+
+- `;f` to grep filenames
+- `;r` to grep 
+
 ## TODO
 
  - no snippets installed

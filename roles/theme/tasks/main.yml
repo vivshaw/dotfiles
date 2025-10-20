@@ -18,4 +18,3 @@
   ansible.builtin.copy:
     src: ./assets/images/leafs/default_leafs.jpg
     dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/default_leafs.jpg"
-
