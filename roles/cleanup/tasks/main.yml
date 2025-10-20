@@ -1,0 +1,7 @@
+---
+- name: remove duplicate Atuin line from `~/.zshrc` (if it exists)
+  become: "{{ should_be_root }}"
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "eval \"$(atuin init zsh)\""
+    state: absent

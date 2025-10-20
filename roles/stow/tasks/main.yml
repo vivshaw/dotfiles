@@ -1,13 +1,16 @@
 ---
 - name: install stow
-  become: true
+  become: "{{ should_be_root }}"
   ansible.builtin.package:
     name: stow
     state: present
 
 - name: remove stuff that will conflict with stow
   loop:
-    - .zshrc
+    - .zshrc.base.sh
+    - .zshrc.linux.sh
+    - .zshrc.mac.sh
+    - .zshrc.win.sh
     - .p10k.zsh
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/{{ item }}"
@@ -20,3 +23,23 @@
     executable: /bin/bash
   register: result
   changed_when: 'result.stderr is search("LINK: ")'
+
+- name: add reference to base dotfiles to zshrc
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "source {{ ansible_env.HOME }}/.zshrc.base.sh"
+    create: yes
+
+- name: add reference to macOS-specific dotfiles to zshrc
+  when: is_macos
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "source {{ ansible_env.HOME }}/.zshrc.mac.sh"
+    create: yes
+
+- name: add reference to Linux-specific dotfiles to zshrc
+  when: is_debian
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "source {{ ansible_env.HOME }}/.zshrc.linux.sh"
+    create: yes

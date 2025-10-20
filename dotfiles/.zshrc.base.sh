@@ -1,6 +1,5 @@
-
-# Local initializations (use this for stuff that must run before oh-my-sh setup):
-[[ ! -f ~/.zshrc.init.local ]] || source ~/.zshrc.init.local
+# system-independent zsh config
+# ------------------------------
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -113,15 +112,24 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Initialize Atuin
+# initialize Atuin
+. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
-# Local customizations:
-[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
+# configure aliases
+alias cat=bat
+alias ls=eza
 
-alias bat=batcat
-alias fd=fdfind
-alias ls=exa
-
+# configure editors
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+
+# activate `fnm`: https://github.com/Schniz/fnm
+if command -v fnm >/dev/null; then
+    eval "$(fnm env --use-on-cd)"
+fi
+
+# activate `direnv`: https://direnv.net/
+if command -v direnv >/dev/null; then
+    eval "$(direnv hook zsh)"
+fi

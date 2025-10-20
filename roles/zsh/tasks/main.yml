@@ -1,6 +1,7 @@
 ---
 - name: install zsh
-  become: true
+  become: "{{ should_be_root }}"
+  when: is_debian
   ansible.builtin.package:
     name: zsh
     state: present
@@ -30,7 +31,7 @@
     depth: 1
 
 - name: change user shell to zsh
-  become: true
+  become: "{{ should_be_root }}"
   ansible.builtin.user:
     # this ensures that we change the shell _for the user running this playbook_,
     # rather than _for the root user_.

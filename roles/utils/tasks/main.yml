@@ -1,18 +1,31 @@
 ---
 - name: install CLI utils with packages
-  become: true
+  become: "{{ should_be_root }}"
   ansible.builtin.package:
     name:
       - bat
       - curl
       - eza
-      - fd-find
       - fzf
       - jq
       - ripgrep
     state: present
 
+- name: install CLI utils with packages (Mac)
+  when: is_macos
+  ansible.builtin.package:
+    name:
+      - fd
+    state: present
+
+- name: install CLI utils with packages (Debian)
+  when: is_debian
+  ansible.builtin.package:
+    name:
+      - fd-find
+    state: present
+
 - name: install Atuin
-  become: true
+  become: "{{ should_be_root }}"
   ansible.builtin.shell: |
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh

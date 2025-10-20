@@ -1,6 +1,6 @@
-# Nice terminal utilities
+# Utils role
 
-this role installs a hanful of useful CLI utils that I like to have handy:
+this role installs a handful of useful CLI utils that I like to have handy:
 
 - `atuin` - [fancy shell history](https://atuin.sh/)
 - `bat` - [`cat` clone with syntax highlights](https://github.com/sharkdp/bat)

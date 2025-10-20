@@ -1,6 +1,11 @@
 ---
 - name: dotfiles & system bootstrap
   hosts: localhost
+  vars:
+    is_debian: "{{ ansible_os_family == 'Debian' }}"
+    is_macos: "{{ ansible_os_family == 'Darwin' }}"
+    is_wsl: "{{ 'microsoft' in ansible_facts['kernel'] }}"
+    should_be_root:  "{{ true if is_debian else false }}"
   tasks:
     - name: zsh
       tags: zsh
@@ -12,8 +17,14 @@
       import_role:
         name: utils
 
+    - name: theme setup
+      tags: theme
+      import_role:
+        name: theme
+
     - name: Gnome GUI tweaks
       tags: gnome
+      when: is_debian
       import_role:
         name: gnome
 
@@ -26,3 +37,8 @@
       tags: nvim
       import_role:
         name: nvim
+
+    - name: cleanup
+      tags: cleanup
+      import_role:
+        name: cleanup

@@ -1,6 +1,6 @@
 ---
 - name: install neovim
-  become: true
+  become: "{{ should_be_root }}"
   ansible.builtin.package:
     name:
       - neovim

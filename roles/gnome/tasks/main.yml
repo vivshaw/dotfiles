@@ -1,10 +1,4 @@
 ---
-- name: place wallpaper in public location
-  become: true
-  ansible.builtin.copy:
-    src: ./assets/images/leafs/default_leafs.jpg
-    dest: /usr/share/backgrounds/default_leafs.jpg
-
 - name: set Gnome wallpaper
   ansible.builtin.shell: |
     gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/default_leafs.jpg'

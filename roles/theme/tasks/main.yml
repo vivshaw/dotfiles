@@ -1,0 +1,21 @@
+---
+- name: place wallpaper in public location (Linux)
+  become: true
+  when: is_debian
+  ansible.builtin.copy:
+    src: ./assets/images/leafs/default_leafs.jpg
+    dest: /usr/share/backgrounds/default_leafs.jpg
+
+- name: ensure Pictures directory exists (macOS)
+  when: is_macos
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/Pictures/Wallpapers"
+    state: directory
+    mode: '0755'
+
+- name: place wallpaper in Pictures (macOS)
+  when: is_macos
+  ansible.builtin.copy:
+    src: ./assets/images/leafs/default_leafs.jpg
+    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/default_leafs.jpg"
+
