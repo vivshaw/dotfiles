@@ -9,6 +9,14 @@ eval "$(atuin init zsh)"
 alias cat=bat
 alias ls=eza
 
+# list recent branches, by date of latest change
+alias brecent='git branch --sort=-committerdate | head -n 20'
+
+# set upstream branch to current branchname on origin
+upstr() {
+  git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)
+}
+
 # configure editors
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
