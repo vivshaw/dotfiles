@@ -13,6 +13,7 @@
 
 - name: install CLI utils with packages (Mac)
   when: is_macos
+  become: "{{ should_be_root }}"
   ansible.builtin.package:
     name:
       - fd
@@ -20,6 +21,7 @@
 
 - name: install CLI utils with packages (Debian)
   when: is_debian
+  become: "{{ should_be_root }}"
   ansible.builtin.package:
     name:
       - fd-find
