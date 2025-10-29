@@ -1,7 +1,8 @@
 ---
 - name: place wallpaper in public location (Linux)
   become: true
-  when: is_debian
+  # if we're in WSL, the Linux system isn't controlling our desktop, so no need for graphics stuff.
+  when: is_debian and not is_wsl
   ansible.builtin.copy:
     src: ./assets/images/leafs/default_leafs.jpg
     dest: /usr/share/backgrounds/default_leafs.jpg

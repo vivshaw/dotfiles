@@ -44,6 +44,13 @@
     line: "source {{ ansible_env.HOME }}/.zshrc.linux.sh"
     create: yes
 
+- name: add reference to WSL-specific dotfiles to zshrc
+  when: is_wsl
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "source {{ ansible_env.HOME }}/.zshrc.wsl.sh"
+    create: yes
+
 - name: add reference to Powerlevel10k theme to zshrc
   ansible.builtin.lineinfile:
     path: "{{ ansible_env.HOME }}/.zshrc"
