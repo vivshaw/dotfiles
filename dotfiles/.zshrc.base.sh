@@ -1,10 +1,6 @@
 # system-independent zsh config
 # ------------------------------
 
-# initialize Atuin
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
-
 # configure aliases
 alias cat=bat
 alias ls=eza

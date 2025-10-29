@@ -56,3 +56,9 @@
     path: "{{ ansible_env.HOME }}/.zshrc"
     line: "source {{ ansible_env.HOME }}/.zshrc.p10k.sh"
     create: yes
+
+- name: add reference to Atuin zsh config to zshrc
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_env.HOME }}/.zshrc"
+    line: "source {{ ansible_env.HOME }}/.zshrc.atuin.sh"
+    create: yes
