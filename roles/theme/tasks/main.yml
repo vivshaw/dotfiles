@@ -4,8 +4,8 @@
   # if we're in WSL, the Linux system isn't controlling our desktop, so no need for graphics stuff.
   when: is_debian and not is_wsl
   ansible.builtin.copy:
-    src: ./assets/images/leafs/default_leafs.jpg
-    dest: /usr/share/backgrounds/default_leafs.jpg
+    src: ./assets/images/black/jb-1610.jpg
+    dest: /usr/share/backgrounds/jb-1610.jpg
 
 - name: ensure Pictures directory exists (macOS)
   when: is_macos
@@ -17,5 +17,5 @@
 - name: place wallpaper in Pictures (macOS)
   when: is_macos
   ansible.builtin.copy:
-    src: ./assets/images/leafs/default_leafs.jpg
-    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/default_leafs.jpg"
+    src: ./assets/images/black/jb-1610.jpg
+    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/jb-1610.jpg"
