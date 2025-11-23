@@ -29,4 +29,3 @@ not all steps are fully automated. some things to be done by hand:
 - figure out macOS AltTab, can that be automated?
 - can I make ssh key names generic?
 - add uv
-- stop checking in `packer_compiled.lua`
