@@ -31,3 +31,17 @@
   become: "{{ should_be_root }}"
   ansible.builtin.shell: |
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+- name: ensure ~/.local/bin directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.local/bin"
+    state: directory
+    mode: '0755'
+
+- name: install custom scripts
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.local/bin/{{ item | basename }}"
+    mode: '0755'
+  with_fileglob:
+    - "{{ role_path }}/bin/*"
