@@ -13,6 +13,12 @@ upstr() {
   git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)
 }
 
+# push current branch to origin with upstream tracking
+pup() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  git push -u origin "$current_branch"
+}
+
 # configure editors
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
