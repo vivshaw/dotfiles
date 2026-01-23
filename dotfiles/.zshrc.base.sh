@@ -73,7 +73,7 @@ export EDITOR="$VISUAL"
 
 # activate `fnm`: https://github.com/Schniz/fnm
 if command -v fnm >/dev/null; then
-    eval "$(fnm env --use-on-cd)"
+    eval "$(fnm env --use-on-cd --corepack-enabled)"
 fi
 
 # activate `direnv`: https://direnv.net/
