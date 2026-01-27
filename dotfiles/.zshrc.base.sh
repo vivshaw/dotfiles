@@ -49,7 +49,7 @@ gpush() {
 gpmer() {
   local default_branch=$(_get_default_branch) || return 1
   echo "merging from origin/$default_branch..."
-  git pull origin "$default_branch"
+  git pull --no-rebase origin "$default_branch"
 }
 
 ## rebase pull from default branch (master or main)
