@@ -45,11 +45,11 @@ gpush() {
   git push -u origin "$current_branch"
 }
 
-## merge pull from default branch (master or main)
+## merge from default branch (master or main) into current branch
 gpmer() {
   local default_branch=$(_get_default_branch) || return 1
-  echo "merging from origin/$default_branch..."
-  git pull --no-rebase origin "$default_branch"
+  echo "fetching and merging origin/$default_branch into current branch..."
+  git fetch origin "$default_branch" && git merge "origin/$default_branch"
 }
 
 ## rebase pull from default branch (master or main)
