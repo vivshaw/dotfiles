@@ -27,8 +27,13 @@ _get_default_branch() {
   echo "$default_branch"
 }
 
-## list recent branches, by date of latest change
-alias grecent='git branch --sort=-committerdate | head -n 20'
+## fuzzy-find recent branches and check out the selected one
+grecent() {
+  local branch
+  branch=$(git branch --sort=-committerdate --format='%(refname:short)' |
+    fzf --height=40% --preview='git log --oneline -10 {}') &&
+    git checkout "$branch"
+}
 
 ggrep() {
   git grep --break --heading --line-number $@;

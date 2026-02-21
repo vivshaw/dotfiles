@@ -13,13 +13,13 @@
 
 set -e
 
-# Colors for output
+# colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# Logging functions
+# logging functions
 log_info() {
     echo -e "${GREEN}[INFO]${NC} $1"
 }
@@ -63,7 +63,7 @@ install_macos_prerequisites() {
         log_info "installing Homebrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         
-        # Add Homebrew to PATH for this session
+        # add Homebrew to PATH for this session
         if [[ -f "/opt/homebrew/bin/brew" ]]; then
             eval "$(/opt/homebrew/bin/brew shellenv)"
         elif [[ -f "/usr/local/bin/brew" ]]; then

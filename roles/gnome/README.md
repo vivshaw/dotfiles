@@ -2,12 +2,12 @@
 
 this role handles GNOME-specific desktop environment configuration.
 
-## What it does
+## what it does
 
 - sets the GNOME desktop wallpaper using `gsettings`
 - depends on the `theme` role to place wallpaper files in the appropriate location
 
-## Non-automated tasks
+## non-automated tasks
 
 ### setting the login screen BG and theme
 

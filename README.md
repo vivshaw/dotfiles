@@ -1,8 +1,8 @@
-# What is this?
+# what is this?
 
 this repo contains settings, assets, dotfiles, and docs for getting a new computing environment set up the way I'd prefer it.
 
-## Automated setup
+## automated setup
 
 most system configuration is automated via [the included Ansible playbook](./main.yml) and [roles](./roles/). run `setup.sh` to automagically provision Ansible and execute the playbook.
 
@@ -10,7 +10,7 @@ most system configuration is automated via [the included Ansible playbook](./mai
 ./setup.sh
 ```
 
-### Manual
+### manual
 
 not all steps are fully automated. some things to be done by hand:
 
