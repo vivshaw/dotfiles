@@ -25,9 +25,9 @@
   ansible.builtin.package:
     name:
       - fd-find
+      - python-is-python3
     state: present
 
 - name: install Atuin
-  become: "{{ should_be_root }}"
   ansible.builtin.shell: |
-    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
