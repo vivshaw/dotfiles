@@ -1,5 +1,7 @@
 # macOS zsh config
 # ------------------------------
 
-# setup SSH key
-ssh-add --apple-use-keychain ~/.ssh/id_github_avicenna
+# setup SSH keys
+for key in ~/.ssh/id_*; do
+  [[ -f "$key" && "$key" != *.pub ]] && ssh-add --apple-use-keychain "$key" 2>/dev/null
+done
