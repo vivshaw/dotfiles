@@ -2,8 +2,8 @@
 - name: dotfiles & system bootstrap
   hosts: localhost
   vars:
-    is_debian: "{{ ansible_os_family == 'Debian' }}"
-    is_macos: "{{ ansible_os_family == 'Darwin' }}"
+    is_debian: "{{ ansible_facts['os_family'] == 'Debian' }}"
+    is_macos: "{{ ansible_facts['os_family'] == 'Darwin' }}"
     is_wsl: "{{ 'microsoft' in ansible_facts['kernel'] }}"
     should_be_root:  "{{ true if is_debian else false }}"
   tasks:

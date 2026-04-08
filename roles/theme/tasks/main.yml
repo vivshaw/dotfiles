@@ -10,7 +10,7 @@
 - name: ensure Pictures directory exists (macOS)
   when: is_macos
   ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/Pictures/Wallpapers"
+    path: "{{ ansible_facts['env']['HOME'] }}/Pictures/Wallpapers"
     state: directory
     mode: '0755'
 
@@ -18,4 +18,4 @@
   when: is_macos
   ansible.builtin.copy:
     src: ./assets/images/black/jb-1610.jpg
-    dest: "{{ ansible_env.HOME }}/Pictures/Wallpapers/jb-1610.jpg"
+    dest: "{{ ansible_facts['env']['HOME'] }}/Pictures/Wallpapers/jb-1610.jpg"
