@@ -1,2 +1,5 @@
+# macOS
+.DS_Store
+
 # Neovim packer plugin cache
 **/packer_compiled.lua
