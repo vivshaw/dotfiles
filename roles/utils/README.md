@@ -7,5 +7,6 @@ this role installs a handful of useful CLI utils that I like to have handy:
 - `exa` - [nicer `ls`](https://the.exa.website/)
 - `fd` - a [nicer `find`](https://github.com/sharkdp/fd)
 - `fzf` - [a fast and pleasant fuzzy-finder](https://github.com/junegunn/fzf)
+- `gh` - [GitHub's official CLI](https://cli.github.com/)
 - `jq` - the Swiss Army Knife of CLI data manipulation
 - `ripgrep` - [fancy `grep` that respects `.gitignore`](https://github.com/BurntSushi/ripgrep)
