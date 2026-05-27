@@ -76,6 +76,9 @@ gunst() {
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
+# disable Claude Code auto-memory by default
+export CLAUDE_CODE_DISABLE_AUTO_MEMORY=1
+
 # activate `fnm`: https://github.com/Schniz/fnm
 if command -v fnm >/dev/null; then
     eval "$(fnm env --use-on-cd --corepack-enabled)"
