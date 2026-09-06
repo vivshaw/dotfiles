@@ -1,6 +1,11 @@
 # Atuin zsh config
-# (must run _after_ oh-my-zsh to avoid keybinding conflicts)
+# (must run after the base keybinds to avoid conflicts)
 # ------------------------------
 
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
+if [[ -r "$HOME/.atuin/bin/env" ]]; then
+  . "$HOME/.atuin/bin/env"
+fi
+
+if command -v atuin >/dev/null; then
+  eval "$(atuin init zsh)"
+fi

@@ -2,7 +2,6 @@
 # ------------------------------
 
 # set up keychain with SSH keys
-# this will make your life easier when using git from WSL
 eval `keychain --agents ssh --eval ~/.ssh/ockham_github_key`
 
 # allow quick jump from WSL fs to Win fs

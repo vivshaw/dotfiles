@@ -11,7 +11,10 @@
     - .zshrc.linux.sh
     - .zshrc.mac.sh
     - .zshrc.win.sh
+    # TODO: remove after all machines have migrated to Starship.
     - .p10k.zsh
+    - .zshrc.p10k.sh
+    - .zshrc.starship.sh
   ansible.builtin.file:
     path: "{{ ansible_facts['env']['HOME'] }}/{{ item }}"
     state: absent
@@ -51,14 +54,22 @@
     line: "source {{ ansible_facts['env']['HOME'] }}/.zshrc.wsl.sh"
     create: yes
 
-- name: add reference to Powerlevel10k theme to zshrc
+# TODO: remove after all machines have migrated to Starship.
+- name: remove Powerlevel10k reference from zshrc
   ansible.builtin.lineinfile:
     path: "{{ ansible_facts['env']['HOME'] }}/.zshrc"
     line: "source {{ ansible_facts['env']['HOME'] }}/.zshrc.p10k.sh"
+    state: absent
+
+- name: add reference to Starship to zshrc
+  ansible.builtin.lineinfile:
+    path: "{{ ansible_facts['env']['HOME'] }}/.zshrc"
+    line: "source {{ ansible_facts['env']['HOME'] }}/.zshrc.starship.sh"
     create: yes
 
-- name: add reference to Atuin zsh config to zshrc
+# TODO: remove after all machines have migrated to Starship.
+- name: remove standalone Atuin reference from zshrc
   ansible.builtin.lineinfile:
     path: "{{ ansible_facts['env']['HOME'] }}/.zshrc"
     line: "source {{ ansible_facts['env']['HOME'] }}/.zshrc.atuin.sh"
-    create: yes
+    state: absent

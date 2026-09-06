@@ -1,0 +1,1 @@
+- clean up old oh-my-zsh stuff once everything is migrated. check TODO comments!

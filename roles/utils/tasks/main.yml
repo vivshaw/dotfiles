@@ -10,6 +10,7 @@
       - gh
       - jq
       - ripgrep
+      - zellij
     state: present
 
 - name: install CLI utils with packages (Mac)
@@ -18,6 +19,7 @@
   ansible.builtin.package:
     name:
       - fd
+      - starship
     state: present
 
 - name: install CLI utils with packages (Debian)
@@ -32,3 +34,17 @@
 - name: install Atuin
   ansible.builtin.shell: |
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive
+
+- name: ensure local bin directory exists (Debian)
+  when: is_debian
+  ansible.builtin.file:
+    path: "{{ ansible_facts['env']['HOME'] }}/.local/bin"
+    state: directory
+    mode: '0755'
+
+- name: install Starship (Debian)
+  when: is_debian
+  ansible.builtin.shell: |
+    curl --proto '=https' --tlsv1.2 -LsSf https://starship.rs/install.sh | sh -s -- --yes --bin-dir "{{ ansible_facts['env']['HOME'] }}/.local/bin"
+  args:
+    creates: "{{ ansible_facts['env']['HOME'] }}/.local/bin/starship"
